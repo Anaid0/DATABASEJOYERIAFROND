@@ -1,0 +1,58 @@
+<div class="cliente-inicio">
+      <header>
+        <h1>Bienvenido a nuestra Joyería</h1>
+        <p>Explora los mejores productos y servicios</p>
+      </header>
+      
+      <!-- Botón Admin y formulario de inicio de sesión -->
+      <div class="admin-container">
+        <button class="buttonAdmin" (click)="mostrarLogin()">Admin</button>
+        
+        <div *ngIf="isLoginVisible" class="login-overlay">
+          <div class="login-form">
+            <h2>Iniciar sesión</h2>
+            <form (ngSubmit)="iniciarSesion($event)">
+              <label for="username">Usuario:</label>
+              <input id="username" type="text" [(ngModel)]="username" name="username" required />
+              <label for="password">Contraseña:</label>
+              <input id="password" type="password" [(ngModel)]="password" name="password" required />
+              <button type="submit">Iniciar sesión</button>
+              <button type="button" (click)="mostrarLogin()">Cancelar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Opciones de la página -->
+      <div class="opciones">
+        <button routerLink="compras">Sobre Nosotros</button>
+        <button routerLink="agente">Devolución</button>
+        <button (click)="buscarSucursales()">Ver Sucursales</button>
+      </div>
+      
+      <!-- Productos -->
+      <div class="productos-container">
+        <h1 class="productos-title">Nuestros Productos</h1>
+        
+        <div class="carousel-container">
+          <div class="productos-carousel" [style.transform]="getCarouselTransform()">
+            <div class="producto-card" (click)="verProducto(producto.id_producto)" *ngFor="let producto of productos">
+              <img [src]="producto.img" alt="{{producto.nombre_producto}}" class="producto-imagen" />
+              <div class="producto-info">
+                <h2 class="producto-nombre">{{producto.nombre_producto}}</h2>
+                <p class="producto-descripcion">{{producto.descripcion_producto}}</p>
+                <p class="producto-precio">{{producto.precio | currency}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <button class="carousel-prev" (click)="prevSlide()">&#10094;</button>
+        <button class="carousel-next" (click)="nextSlide()">&#10095;</button>
+      </div>
+      
+      <div class="map" *ngIf="isMapVisible">
+        <app-map></app-map> 
+      </div>
+    </div>
+

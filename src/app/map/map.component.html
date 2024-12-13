@@ -1,0 +1,21 @@
+<div class="buscarSucursal">
+    <form (ngSubmit)="buscarSucursal()">
+      <h1>Sucursales cerca de ti</h1>
+  
+      <label for="direccionCasa">Dirección Residencia</label>
+      <input placeholder="Ingrese su Dirección" type="text" id="direccionCasa" name="direccionCasa" [(ngModel)]="direccionCasa" required>
+  
+      <section class="coordenadas">
+        <label for="latitudCasa">Latitud Residencia</label>
+        <input type="number" id="latitudCasa" name="latitudCasa" [(ngModel)]="latitudCasa" required>
+  
+        <label for="longitudCasa">Longitud Residencia</label>
+        <input type="number" id="longitudCasa" name="longitudCasa" [(ngModel)]="longitudCasa" required>
+      </section>
+  
+      <button type="submit">Buscar</button>
+    </form>
+  
+    <div id="map" style="width: 100%; height: 400px;"></div>
+  </div>
+  
