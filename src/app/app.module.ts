@@ -5,7 +5,6 @@ import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms'; 
 import { ClienteInicioComponent } from './cliente-inicio/cliente-inicio.component';
-import { AdminInicioComponent } from './admin-inicio/admin-inicio.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 import { ComentariosComponent } from './comentarios/comentarios.component';
 import { MapComponent } from './map/map.component';
@@ -15,7 +14,6 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
   declarations: [
     AppComponent,
     ClienteInicioComponent,
-    AdminInicioComponent,
     DetalleProductoComponent,
     ComentariosComponent,
     MapComponent,

@@ -1,65 +1,70 @@
-.comment-form-container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    font-family: Arial, sans-serif;
-  }
-  
-  h2 {
-    text-align: center;
-    color: #333;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #555;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-  }
-  
-  textarea.form-control {
-    resize: none;
-  }
-  
-  .btn-submit {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #4caf50;
-    color: #fff;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-submit:hover {
-    background-color: #45a049;
-  }
-  
-  .btn-submit:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  .error {
-    color: #ff4d4d;
-    font-size: 12px;
-  }
-  
+/* Estilo general del formulario */
+form {
+  max-width: 400px; /* Ancho máximo del formulario */
+  margin: 20px auto; /* Centrar el formulario */
+  padding: 20px; /* Espaciado interno */
+  border: 1px solid #ddd; /* Borde ligero */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Fondo claro */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+/* Estilo de cada div (contenedor de los campos) */
+form div {
+  margin-bottom: 15px; /* Espaciado entre los campos */
+}
+
+/* Estilo de las etiquetas */
+form label {
+  display: block; /* Etiquetas en bloque */
+  margin-bottom: 5px; /* Espaciado debajo de la etiqueta */
+  font-weight: bold; /* Texto en negrita */
+  color: #333; /* Color del texto */
+  font-size: 14px; /* Tamaño de letra */
+}
+
+/* Estilo de los campos de entrada */
+form input[type="text"],
+form textarea {
+  width: 100%; /* Ancho completo */
+  padding: 10px; /* Espaciado interno */
+  font-size: 14px; /* Tamaño de letra */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 4px; /* Bordes ligeramente redondeados */
+  background-color: #fff; /* Fondo blanco */
+  box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
+  transition: border-color 0.3s ease; /* Transición para el efecto de foco */
+}
+
+/* Cambia el borde al enfocar */
+form input[type="text"]:focus,
+form textarea:focus {
+  border-color: #007bff; /* Azul al enfocar */
+  outline: none; /* Quita el contorno predeterminado */
+}
+
+/* Estilo del botón */
+form button {
+  width: 100%; /* Botón de ancho completo */
+  padding: 10px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de letra */
+  font-weight: bold; /* Texto en negrita */
+  color: #fff; /* Texto blanco */
+  background-color: #007bff; /* Fondo azul */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor a mano */
+  transition: background-color 0.3s ease; /* Transición para el efecto hover */
+}
+
+/* Cambia el fondo al pasar el cursor */
+form button:hover {
+  background-color: #0056b3; /* Azul más oscuro */
+}
+
+/* Estilo para que el textarea tenga el tamaño adecuado */
+form textarea {
+  resize: vertical; /* Solo permite redimensionar en vertical */
+  min-height: 80px; /* Altura mínima */
+  max-height: 200px; /* Altura máxima */
+}

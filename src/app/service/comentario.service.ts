@@ -7,15 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class ComentarioService {
 
-  private apiUrl = 'http://localhost:3000/agregarComentario'; // Cambia por la URL de tu backend
+  private apiUrl = 'http://localhost:3000/comentarios/';
 
   constructor(private http: HttpClient) { }
 
-  agregarComentario(comentario: any): Observable<any> {
-    return this.http.post(this.apiUrl, comentario, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    });
+  publicarComentario(id_producto: number, autor: string, contenido: string): Observable<any> {
+    const comentario = { autor, contenido };
+    return this.http.post(`${this.apiUrl}${id_producto}`, comentario);
   }
 }
